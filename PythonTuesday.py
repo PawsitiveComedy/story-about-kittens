@@ -1,4 +1,5 @@
 import turtle
+import random
 
 #
 #NOTE: This is a modern kitten world.
@@ -28,7 +29,7 @@ def dance(time):
 
         dance(time - 1)
         #Function exits
-        print("Exit")
+        #print("Exit")
     
 def profession():
     answer = input() #this is where the user's choice is stored
@@ -88,18 +89,30 @@ print("Sarah tells the squirrel: " + str(profession())) #prints the user's answe
 catToys = [ " ", " ", " ", " ", " "]
 
 #Filter Function Definition
-def filterToys(listOfToys):
-    print(listOfToys[1])
+def filterToys():
+
+    counter = 0
+
+    for items in catToys:
+        answer = input()
+        catToys[counter] = str(answer)
+
+        counter += 1
+    
     return True
 
 print("Sarah returns home. To her surprise, her owner offers her toys.")
 print("Which toy does Sarah love?")
 
-for items in catToys:
-    answer = input()
-    catToys[items] = str(answer)
 
-    filterToys(catToys)
+filterToys() #function call
+
+#Basic AI Human
+for x in range(5):
+    print("")
+    
+print("Her owner gaver her a " + catToys[random.randint(0, 4)])
+
 
 #Work at McTurkeys
 
